@@ -2,7 +2,7 @@
 
 I think I have some AOP in my OOP
 
-benchmark: http://jsperf.com/mash-vs-native
+benchmark: http://jsperf.com/mash-vs-native/2
 
 install: `npm install mash-js`
 
