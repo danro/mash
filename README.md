@@ -58,6 +58,8 @@ hero.attack('Orc');
 // Cast fireball for 80 damage!
 ```
 
+But what if a method gets replaced by mistake? [Just point to the one you want](http://requirebin.com/?gist=1d7a7d20b972c8055623).
+
 ### Class Inheritance
 
 http://requirebin.com/?gist=8b2726653fc41cf9b5c4
