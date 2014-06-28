@@ -19,7 +19,44 @@ foo.create();
 // hello mash
 ```
 
-### Class Example
+### Multiple Inheritance
+
+http://requirebin.com/?gist=4303d388b67fa29cdd85
+
+```javascript
+var withSword = mash(function () {
+  this.slash = function (dmg) {
+    console.log('Sword slash for ' + dmg + ' damage!');
+  };
+});
+
+var withMagic = mash(function () {
+  this.fireball = function (dmg) {
+    console.log('Cast fireball for ' + dmg + ' damage!');
+  };
+});
+
+function Hero() {}
+mash(Hero, function () {
+  withSword.mash(this);
+  withMagic.mash(this);
+
+  this.attack = function (enemy) {
+    console.log('Hero attacks the ' + enemy);
+    this.slash(25);
+    this.fireball(80);
+  };
+});
+
+var hero = new Hero();
+hero.attack('Orc');
+
+// Hero attacks the Orc
+// Sword slash for 25 damage!
+// Cast fireball for 80 damage!
+```
+
+### Class Inheritance
 
 http://requirebin.com/?gist=8b2726653fc41cf9b5c4
 
