@@ -4,6 +4,8 @@ I think I have some AOP in my OOP
 
 benchmark: http://jsperf.com/mash-vs-native
 
+install: `npm install mash-js`
+
 ### Basic Example
 
 http://requirebin.com/?gist=c5b6944f89c7d02055ba

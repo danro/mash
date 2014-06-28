@@ -1,10 +1,10 @@
 /*!
- * mash.js v0.9.0
+ * mash.js v0.9.1
  * Functional prototype mixins
  * https://github.com/danro/mash
  * MIT License
  */
-function mash(base, mixin) {
+var mash = function (base, mixin) {
   // Default base to an empty object
   if (!mixin) { mixin = base; base = {}; }
 
@@ -40,4 +40,5 @@ function mash(base, mixin) {
   return base;
 }
 
-module.exports = mash;
+// Export module
+if (typeof module !== 'undefined' && module.exports) module.exports = mash;
