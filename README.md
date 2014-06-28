@@ -2,7 +2,7 @@
 
 I think I have some AOP in my OOP
 
-demo: TODO
+demo: http://requirebin.com/?gist=c5b6944f89c7d02055ba
 
 benchmark: http://jsperf.com/mash-vs-native
 
