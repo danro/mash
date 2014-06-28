@@ -2,11 +2,11 @@
 
 I think I have some AOP in my OOP
 
-demo: http://requirebin.com/?gist=c5b6944f89c7d02055ba
-
 benchmark: http://jsperf.com/mash-vs-native
 
 ### Basic Example
+
+http://requirebin.com/?gist=c5b6944f89c7d02055ba
 
 ```javascript
 var foo = mash(function () {
@@ -20,6 +20,8 @@ foo.create();
 ```
 
 ### Class Example
+
+http://requirebin.com/?gist=8b2726653fc41cf9b5c4
 
 ```javascript
 function Animal() {}
