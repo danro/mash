@@ -15,7 +15,7 @@ When you `mash(object, mixin)` it will run the mixin as the object.
 Additionally, two methods will be added to the object:
 
 #### .create( [arguments] )
-> Create an instance of your newly mashed prototype or object.
+> Create an instance of your newly mashed prototype or object. This will auto-invoke any `init` method found on the instance, passing along the arguments.
 
 #### .extend( object )
 > Run the same mixin on another object.
