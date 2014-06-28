@@ -1,0 +1,20 @@
+{
+  "name": "mash-js",
+  "main": "mash",
+  "description": "Functional prototype mixins",
+  "version": "0.9.0",
+  "homepage": "https://github.com/danro/mash",
+  "author": "Dan Rogers <dan@danro.net>",
+  "license": "MIT",
+  "keywords": [
+    "class",
+    "prototype",
+    "inheritance",
+    "functional",
+    "mixin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danro/mash.git"
+  }
+}

@@ -1,7 +1,7 @@
 /*!
- * mash.js v0.8.0
+ * mash.js v0.9.0
  * Functional prototype mixins
- * https://gist.github.com/danro/5812ab430f041a3b7728
+ * https://github.com/danro/mash
  * MIT License
  */
 function mash(base, mixin) {
@@ -39,3 +39,5 @@ function mash(base, mixin) {
   // Provide a reference to the now-modified base
   return base;
 }
+
+module.exports = mash;
