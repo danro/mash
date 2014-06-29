@@ -2,7 +2,7 @@
 
 I think I have some AOP in my OOP
 
-benchmark: http://jsperf.com/mash-vs-native/3
+benchmark: http://jsperf.com/mash-vs-native/4
 
 install: `npm install mash-js`
 
@@ -22,7 +22,7 @@ Additionally, two methods will be added to the object:
 
 ## Basic example
 
-demo: http://jsbin.com/xipat/1/edit?js,console
+demo: http://jsbin.com/xipat/3/edit?js,console
 
 ```javascript
 var foo = mash(function () {
@@ -37,7 +37,7 @@ foo.create();
 
 ## Multiple inheritance
 
-demo: http://jsbin.com/borat/1/edit?js,console
+demo: http://jsbin.com/borat/3/edit?js,console
 
 ```javascript
 var withSword = mash(function () {
@@ -72,11 +72,11 @@ hero.attack('Orc');
 // Cast fireball for 80 damage!
 ```
 
-But what if a method gets replaced by mistake? [Just point to the one you want](http://jsbin.com/revus/1/edit?js,console).
+But what if a method gets replaced by mistake? [Just point to the one you want](http://jsbin.com/revus/3/edit?js,console).
 
 ## Class inheritance
 
-demo: http://jsbin.com/micil/1/edit?js,console
+demo: http://jsbin.com/micil/3/edit?js,console
 
 ```javascript
 function Animal() {}
