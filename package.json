@@ -6,6 +6,10 @@
   "homepage": "https://github.com/danro/mash",
   "author": "Dan Rogers <dan@danro.net>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danro/mash.git"
+  },
   "keywords": [
     "class",
     "prototype",
@@ -13,8 +17,7 @@
     "functional",
     "mixin"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/danro/mash.git"
+  "devDependencies": {
+    "mocha": "*"
   }
 }

@@ -38,7 +38,7 @@ var mash = function (base, mixin) {
 
   // Provide a reference to the now-modified base
   return base;
-}
+};
 
 // Export module
 if (typeof module !== 'undefined' && module.exports) module.exports = mash;
