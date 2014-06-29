@@ -1,5 +1,5 @@
 /*!
- * mash.js v0.9.2
+ * mash.js v0.9.3
  * Functional prototype mixins
  * https://github.com/danro/mash
  * MIT License
@@ -31,7 +31,7 @@ var mash = function (base, mixin) {
   };
 
   // Allow the mixin to be run on another object
-  base.extend = function (obj) {
+  base.mixin = function (obj) {
     mixin.call(obj);
     return proto;
   };

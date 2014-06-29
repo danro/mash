@@ -6,7 +6,7 @@ benchmark: http://jsperf.com/mash-vs-native/3
 
 install: `npm install mash-js`
 
-### What It Does
+### What it does
 
 Mash uses mixin functions to modify prototypes and objects.
 
@@ -17,10 +17,10 @@ Additionally, two methods will be added to the object:
 #### .create( [arguments] )
 > Create an instance of your newly mashed prototype or object. This will auto-invoke any `init` method found on the instance, passing along the arguments.
 
-#### .extend( object )
+#### .mixin( object )
 > Run the same mixin on another object.
 
-## Basic Example
+## Basic example
 
 demo: http://jsbin.com/xipat/1/edit?js,console
 
@@ -35,7 +35,7 @@ foo.create();
 // hello mash
 ```
 
-## Multiple Inheritance
+## Multiple inheritance
 
 demo: http://jsbin.com/borat/1/edit?js,console
 
@@ -54,8 +54,8 @@ var withMagic = mash(function () {
 
 function Hero() {}
 mash(Hero, function () {
-  withSword.extend(this);
-  withMagic.extend(this);
+  withSword.mixin(this);
+  withMagic.mixin(this);
 
   this.attack = function (enemy) {
     console.log('Hero attacks the ' + enemy);
@@ -74,7 +74,7 @@ hero.attack('Orc');
 
 But what if a method gets replaced by mistake? [Just point to the one you want](http://jsbin.com/revus/1/edit?js,console).
 
-## Class Inheritance
+## Class inheritance
 
 demo: http://jsbin.com/micil/1/edit?js,console
 
@@ -92,7 +92,7 @@ mash(Animal, function() {
 
 function Snake() {}
 mash(Snake, function () {
-  var supr = Animal.extend(this);
+  var supr = Animal.mixin(this);
 
   this.move = function() {
     console.log('Slithering...');
@@ -102,7 +102,7 @@ mash(Snake, function () {
 
 function Horse() {}
 mash(Horse, function () {
-  var supr = Animal.extend(this);
+  var supr = Animal.mixin(this);
 
   this.move = function() {
     console.log('Galloping...');
