@@ -1,5 +1,5 @@
 /*!
- * mash.js v0.9.3
+ * mash.js v0.9.4
  * Functional prototype mixins
  * https://github.com/danro/mash
  * @license MIT
@@ -24,7 +24,7 @@ var mash = function (base, mixin) {
       ctor.prototype = proto;
     }
     var inst = new ctor();
-    if (typeof inst.init === 'function') {
+    if (typeof proto.init === 'function') {
       proto.init.apply(inst, arguments);
     }
     return inst;

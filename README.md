@@ -24,14 +24,14 @@ Additionally, two methods will be added to the object:
 
 ```
 Measuring raw prototype access..
-[mash.js mixins] x 6,447,660 ops/sec ±0.21% (101 runs sampled)
-[native prototypes] x 6,255,427 ops/sec ±0.33% (96 runs sampled)
+[mash.js mixins] x 6,404,834 ops/sec ±0.41% (100 runs sampled)
+[native prototypes] x 6,248,419 ops/sec ±0.32% (94 runs sampled)
 Fastest is [mash.js mixins]
 
 Measuring constructor abstractions..
-[mash.js create] x 4,541,851 ops/sec ±0.50% (100 runs sampled)
-[coffee class] x 5,526,039 ops/sec ±0.23% (96 runs sampled)
-[p.js init] x 4,375,307 ops/sec ±0.45% (98 runs sampled)
+[mash.js create] x 4,838,249 ops/sec ±0.33% (100 runs sampled)
+[coffee class] x 5,568,587 ops/sec ±0.35% (99 runs sampled)
+[p.js init] x 4,353,508 ops/sec ±0.50% (100 runs sampled)
 Fastest is [coffee class]
 ```
 
