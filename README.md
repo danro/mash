@@ -6,13 +6,6 @@ install: `npm install mash-js`
 
 size: `< 1 kB`
 
-benchmark:
-```
-mash.js mixins x 6,438,197 ops/sec ±0.47% (102 runs sampled)
-native prototypes x 6,225,149 ops/sec ±0.45% (94 runs sampled)
-Fastest is mash.js mixins
-```
-
 ### What it does
 
 Mash uses mixin functions to modify prototypes and objects.
@@ -26,6 +19,23 @@ Additionally, two methods will be added to the object:
 
 #### .mixin( object )
 > Run the same mixin on another object.
+
+### Performance
+
+```
+Measuring raw prototype access..
+[mash.js mixins] x 6,447,660 ops/sec ±0.21% (101 runs sampled)
+[native prototypes] x 6,255,427 ops/sec ±0.33% (96 runs sampled)
+Fastest is [mash.js mixins]
+
+Measuring constructor abstractions..
+[mash.js create] x 4,541,851 ops/sec ±0.50% (100 runs sampled)
+[coffee class] x 5,526,039 ops/sec ±0.23% (96 runs sampled)
+[p.js init] x 4,375,307 ops/sec ±0.45% (98 runs sampled)
+Fastest is [coffee class]
+```
+
+(very fast)
 
 ## Basic example
 

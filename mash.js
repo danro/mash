@@ -21,11 +21,11 @@ var mash = function (base, mixin) {
     var ctor = base;
     if (typeof ctor !== 'function') {
       ctor = function () {};
-      ctor.prototype = base;
+      ctor.prototype = proto;
     }
     var inst = new ctor();
     if (typeof inst.init === 'function') {
-      inst.init.apply(inst, arguments);
+      proto.init.apply(inst, arguments);
     }
     return inst;
   };

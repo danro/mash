@@ -19,12 +19,13 @@
   ],
   "scripts": {
     "test": "mocha test/test.js",
-    "bench": "node test/bench.js",
+    "bench": "node test/bench-native.js && node test/bench-create.js",
     "min": "uglifyjs mash.js --comments -mv > mash-min.js"
   },
   "devDependencies": {
     "benchmark": "1.x",
     "uglify-js": "2.x",
+    "pjs": "5.x",
     "mocha": "*"
   }
 }

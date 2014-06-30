@@ -11,7 +11,7 @@ var mashTest = (function () {
     };
 
     this.describe = function () {
-      return this.name +' '+ this.size +' '+ this.color;
+      return this.name + ' ' + this.size + ' ' + this.color;
     };
   });
 
@@ -56,7 +56,7 @@ var nativeTest = (function () {
     this.name = name;
   };
   Canid.prototype.describe = function () {
-    return this.name +' '+ this.size +' '+ this.color;
+    return this.name + ' ' + this.size + ' ' + this.color;
   };
 
   function Wolf() {}
@@ -91,9 +91,11 @@ var nativeTest = (function () {
 // -----------------------------------
 // Benchmark suite
 
+console.log('Measuring raw prototype access..');
+
 (new Benchmark.Suite)
-.add('mash.js mixins', mashTest)
-.add('native prototypes', nativeTest)
+.add('[mash.js mixins]', mashTest)
+.add('[native prototypes]', nativeTest)
 
 // add listeners
 .on('cycle', function(event) {
@@ -101,5 +103,6 @@ var nativeTest = (function () {
 })
 .on('complete', function() {
   console.log('Fastest is ' + this.filter('fastest').pluck('name'));
+  console.log();
 })
 .run();
