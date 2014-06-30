@@ -2,7 +2,7 @@
  * mash.js v0.9.3
  * Functional prototype mixins
  * https://github.com/danro/mash
- * MIT License
+ * @license MIT
  */
 var mash = function (base, mixin) {
   // Default base to an empty object
