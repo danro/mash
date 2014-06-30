@@ -1,6 +1,7 @@
 var assert = require('assert');
-var mash = require('./mash.js');
+var mash = require('../mash.js');
 
+/*global describe*/
 describe('mash', function () {
 
   describe('mashing objects', function () {

@@ -17,7 +17,12 @@
     "functional",
     "mixin"
   ],
+  "scripts": {
+    "test": "mocha test/test.js",
+    "bench": "node test/bench.js"
+  },
   "devDependencies": {
+    "benchmark": "1.x",
     "mocha": "*"
   }
 }

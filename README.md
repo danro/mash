@@ -2,15 +2,22 @@
 
 I think I have some AOP in my OOP
 
-benchmark: http://jsperf.com/mash-vs-native/4
-
 install: `npm install mash-js`
+
+size: `< 1 kB`
+
+benchmark:
+```
+mash.js mixins x 6,438,197 ops/sec ±0.47% (102 runs sampled)
+native prototypes x 6,225,149 ops/sec ±0.45% (94 runs sampled)
+Fastest is mash.js mixins
+```
 
 ### What it does
 
 Mash uses mixin functions to modify prototypes and objects.
 
-When you `mash(object, mixin)` it will run the mixin as the object.
+When you `mash(object, mixin)` it will run the mixin on the object.
 
 Additionally, two methods will be added to the object:
 
@@ -121,6 +128,14 @@ tom.move();
 // Tommy the Palomino moved 45m.
 
 ```
+
+## Contributing
+
+`npm install` to install testing libs.
+
+`npm test` to make sure tests pass :)
+
+`npm run bench` for a good time
 
 --
 

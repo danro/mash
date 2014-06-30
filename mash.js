@@ -11,7 +11,7 @@ var mash = function (base, mixin) {
   var proto = base.prototype;
 
   // Modify objects directly instead of Object.prototype
-  if (proto === {}.prototype) proto = base;
+  if (proto === {}.prototype) { proto = base; }
 
   // Run the mixin over the prototype (or base object)
   mixin.call(proto);
@@ -41,4 +41,6 @@ var mash = function (base, mixin) {
 };
 
 // Export module
-if (typeof module !== 'undefined' && module.exports) module.exports = mash;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = mash;
+}
