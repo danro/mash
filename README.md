@@ -147,6 +147,10 @@ tom.move();
 
 `npm run bench` for a good time
 
+## MIT License
+
+This code may be freely distributed under the [MIT license](http://danro.mit-license.org/).
+
 --
 
 https://www.youtube.com/watch?v=OH0n_Ew2YDM

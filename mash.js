@@ -1,5 +1,5 @@
 /*!
- * mash.js v0.9.4
+ * mash.js v1.0.0
  * Functional prototype mixins
  * https://github.com/danro/mash
  * @license MIT
@@ -8,12 +8,8 @@ var mash = function (base, mixin) {
   // Default base to an empty object
   if (!mixin) { mixin = base; base = {}; }
 
-  var proto = base.prototype;
-
-  // Modify objects directly instead of Object.prototype
-  if (proto === {}.prototype) { proto = base; }
-
-  // Run the mixin over the prototype (or base object)
+  // Modify the prototype or base object
+  var proto = base.prototype || base;
   mixin.call(proto);
 
   // Factory method to create instance + init
