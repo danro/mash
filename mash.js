@@ -1,25 +1,27 @@
 /*!
- * mash.js v1.0.0
+ * mash.js v1.0.1
  * Functional prototype mixins
  * https://github.com/danro/mash
  * @license MIT
  */
-var mash = function (base, mixin) {
+var mash = function (base, mixin, options) {
+  'use strict';
+
   // Default base to an empty object
   if (!mixin) { mixin = base; base = {}; }
 
   // Modify the prototype or base object
   var proto = base.prototype || base;
-  mixin.call(proto);
+  mixin.call(proto, options);
 
   // Factory method to create instance + init
   base.create = function () {
-    var ctor = base;
-    if (typeof ctor !== 'function') {
-      ctor = function () {};
-      ctor.prototype = proto;
+    var M = base;
+    if (typeof M !== 'function') {
+      M = function () {};
+      M.prototype = proto;
     }
-    var inst = new ctor();
+    var inst = new M();
     if (typeof proto.init === 'function') {
       proto.init.apply(inst, arguments);
     }
@@ -27,8 +29,8 @@ var mash = function (base, mixin) {
   };
 
   // Allow the mixin to be run on another object
-  base.mixin = function (obj) {
-    mixin.call(obj);
+  base.mixin = function (obj, options) {
+    mixin.call(obj, options);
     return proto;
   };
 
@@ -39,4 +41,6 @@ var mash = function (base, mixin) {
 // Export module
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = mash;
+} else {
+  this.mash = mash;
 }

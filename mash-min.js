@@ -1,7 +1,7 @@
 /*!
- * mash.js v1.0.0
+ * mash.js v1.0.1
  * Functional prototype mixins
  * https://github.com/danro/mash
  * @license MIT
  */
-var mash=function(n,t){if(!t){t=n;n={}}var e=n.prototype||n;t.call(e);n.create=function(){var t=n;if(typeof t!=="function"){t=function(){};t.prototype=e}var o=new t;if(typeof e.init==="function"){e.init.apply(o,arguments)}return o};n.mixin=function(n){t.call(n);return e};return n};if(typeof module!=="undefined"&&module.exports){module.exports=mash}
+var mash=function(t,e,n){"use strict";if(!e){e=t;t={}}var i=t.prototype||t;e.call(i,n);t.create=function(){var M=t;if(typeof M!=="function"){M=function(){};M.prototype=i}var e=new M;if(typeof i.init==="function"){i.init.apply(e,arguments)}return e};t.mixin=function(t,n){e.call(t,n);return i};return t};if(typeof module!=="undefined"&&module.exports){module.exports=mash}else{this.mash=mash}

@@ -2,7 +2,7 @@
   "name": "mash-js",
   "main": "mash",
   "description": "Functional prototype mixins",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/danro/mash",
   "author": "Dan Rogers <dan@danro.net>",
   "license": "MIT",
@@ -20,7 +20,7 @@
   "scripts": {
     "test": "mocha test/test.js",
     "bench": "node test/bench-native.js && node test/bench-create.js",
-    "min": "uglifyjs mash.js --comments -mv > mash-min.js"
+    "min": "uglifyjs mash.js --reserved M --comments -mo mash-min.js"
   },
   "devDependencies": {
     "benchmark": "1.x",

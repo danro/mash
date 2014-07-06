@@ -8,17 +8,21 @@ size: `< 1 kB`
 
 ### What it does
 
-Mash uses mixin functions to modify prototypes and objects.
+Mash uses mixin functions to modify objects and prototypes.
 
-When you `mash(object, mixin)` it will run the mixin on the object.
+When you `mash(object, mixin)` mash will attempt to apply the mixin to the object's prototype. Mash will revert to plain objects if no prototype or object was found.
 
-Additionally, two methods will be added to the object:
+Then, two methods will be added to the mashed object:
 
-#### .create( [arguments] )
-> Create an instance of your newly mashed prototype or object. This will auto-invoke any `init` method found on the instance, passing along the arguments.
+#### mashed.create( arg1, arg2, ... argN )
+> Create an instance of your mashed object. This will auto-invoke any `init` method found on the instance, passing along the arguments.
+>
+> **Returns:** the new instance.
 
-#### .mixin( object )
-> Run the same mixin on another object.
+#### mashed.mixin( object, options )
+> Run the same mixin on another object. See [class mixins](#class-mixins).
+>
+> **Returns:** a reference to the mashed object's prototype.
 
 ### Performance
 
@@ -37,63 +41,27 @@ Fastest is [coffee class]
 
 (very fast)
 
-## Basic example
+## Basic objects
 
-demo: http://jsbin.com/xipat/4/edit?js,console
-
-```javascript
-var foo = mash(function () {
-  this.init = function () {
-    console.log('hello mash');
-  };
-});
-
-foo.create();
-// hello mash
-```
-
-## Multiple inheritance
-
-demo: http://jsbin.com/borat/4/edit?js,console
+demo: http://jsbin.com/xipat/8/edit?js,console
 
 ```javascript
-var withSword = mash(function () {
-  this.slash = function (dmg) {
-    console.log('Sword slash for ' + dmg + ' damage!');
+var greeting = mash(function () {
+  this.init = function (prefix) {
+    console.log(prefix + ' mash');
   };
 });
 
-var withMagic = mash(function () {
-  this.fireball = function (dmg) {
-    console.log('Cast fireball for ' + dmg + ' damage!');
-  };
-});
+var yo = greeting.create('yo');
+// 'yo mash'
 
-function Hero() {}
-mash(Hero, function () {
-  withSword.mixin(this);
-  withMagic.mixin(this);
-
-  this.attack = function (enemy) {
-    console.log('Hero attacks the ' + enemy);
-    this.slash(25);
-    this.fireball(80);
-  };
-});
-
-var hero = new Hero();
-hero.attack('Orc');
-
-// Hero attacks the Orc
-// Sword slash for 25 damage!
-// Cast fireball for 80 damage!
+Object.getPrototypeOf(yo) === greeting;
+// true
 ```
 
-But what if a method gets replaced by mistake? [Just point to the one you want](http://jsbin.com/revus/4/edit?js,console).
+## Class mixins
 
-## Class inheritance
-
-demo: http://jsbin.com/micil/4/edit?js,console
+demo: http://jsbin.com/micil/8/edit?js,console
 
 ```javascript
 function Animal() {}
@@ -137,6 +105,43 @@ tom.move();
 // Galloping...
 // Tommy the Palomino moved 45m.
 
+```
+
+## Functional mixins
+
+demo: http://jsbin.com/borat/8/edit?js,console
+
+```javascript
+var withSword = function () {
+  this.slash = function (dmg) {
+    console.log('Sword slash for ' + dmg + ' damage!');
+  };
+};
+
+var withMagic = function () {
+  this.fireball = function (dmg) {
+    console.log('Cast fireball for ' + dmg + ' damage!');
+  };
+};
+
+function Hero() {}
+mash(Hero, function () {
+  withSword.call(this);
+  withMagic.call(this);
+
+  this.attack = function (enemy) {
+    console.log('Hero attacks the ' + enemy);
+    this.slash(25);
+    this.fireball(80);
+  };
+});
+
+var hero = new Hero();
+hero.attack('Orc');
+
+// Hero attacks the Orc
+// Sword slash for 25 damage!
+// Cast fireball for 80 damage!
 ```
 
 ## Contributing

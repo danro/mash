@@ -116,8 +116,15 @@ describe('', function () {
       assert.ok(Chloe.create().init === 'sigh');
     });
 
+    it ('uses prototype of mashed object', function() {
+      assert.ok(Object.getPrototypeOf(withGun.create()) === withGun);
+    });
+
+    it ('uses prototype of mashed function', function() {
+      assert.ok(Object.getPrototypeOf(Jack.create()) === Jack.prototype);
+    });
+
     it('maintains instanceof', function () {
-      assert.ok(withGun.create() instanceof Object);
       assert.ok(Jack.create() instanceof Jack);
     });
   });
